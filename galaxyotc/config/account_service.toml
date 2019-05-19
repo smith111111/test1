@@ -1,4 +1,0 @@
-[account_service]
-name = "account_service"
-api_prefix = "/v1/account"
-port = 9092

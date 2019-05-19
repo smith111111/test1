@@ -1,4 +1,0 @@
-[multi_wallet_service]
-name = "multi_wallet_service"
-test_net = true
-port = 9003 # 服务端口

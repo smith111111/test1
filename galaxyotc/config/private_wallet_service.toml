@@ -1,7 +1,0 @@
-[private_wallet_service]
-name = "private_wallet_service"
-url = "ws://192.168.0.221:18546"
-owner_address = "0x32ab702c930ceA154b2e3E4C08007723aA6f4bcC"
-escrow_address = "0x3a534510b6fdc99f710bcc57d489585e823cea5c"
-registry = "0x5e360706996ee0c7c433c9a7eb9d1714c92f09fb"
-port = 9001 # 服务端口
