@@ -1,0 +1,4 @@
+[base_service]
+name = "base_service"
+api_prefix = "/v1/base"
+port = 9090

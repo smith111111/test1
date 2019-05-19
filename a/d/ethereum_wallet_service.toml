@@ -1,0 +1,6 @@
+[ethereum_wallet_service]
+name = "ethereum_wallet_service"
+url = "ws://192.168.0.221:18546"
+escrow_address = "0x7bd0a2d803cdc820d7ae188e15b7353aeed78f60"
+registry = "0x11b910c5db290c72831d404c6e39a9525ff1fae1"
+port = 9002 # 服务端口
