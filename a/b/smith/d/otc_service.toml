@@ -1,0 +1,4 @@
+[otc_service]
+name = "otc_service"
+api_prefix = "/v1/otc"
+port = 9094
