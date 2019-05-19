@@ -1,0 +1,4 @@
+[user_service]
+name = "user_service"
+api_prefix = "/v1/user"
+port = 9091

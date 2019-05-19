@@ -1,0 +1,4 @@
+[financial_service]
+name = "financial_service"
+api_prefix = "/v1/financial"
+port = 9197

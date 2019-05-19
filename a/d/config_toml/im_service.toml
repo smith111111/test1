@@ -1,0 +1,9 @@
+[im_service]
+name = "im_service"
+api_prefix = "/v1/im"
+app_key = "9deb4930222eab298664247de975d152"
+app_secret = "3dfe68e55762"
+port = 8026
+
+[nats]
+url = "nats://192.168.0.231:4222"

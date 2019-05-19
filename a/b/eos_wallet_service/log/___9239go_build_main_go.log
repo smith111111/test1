@@ -1,0 +1,9 @@
+--------------------start--------------------
+[01-09 15:10:56.181][ERROR] api-EthereumCallback-error: nats: timeout (account/api.go:41)
+[01-09 15:11:17.626][ERROR] EosCallback Error: nats: timeout (service/callback.go:38)
+[01-09 15:11:35.780][ERROR] api-EthereumCallback-error: nats: timeout (account/api.go:41)
+[01-09 15:12:29.553][ERROR] EosCallback Error: nats: timeout (service/callback.go:38)
+[01-09 17:13:15.951][ERROR] api-EthereumCallback-error: nats: timeout (account/api.go:41)
+[01-09 17:13:15.951][ERROR] EosCallback Error: nats: timeout (service/callback.go:38)
+[01-09 17:14:09.239][ERROR] api-EthereumCallback-error: nats: timeout (account/api.go:41)
+[01-09 17:14:09.239][ERROR] EosCallback Error: nats: timeout (service/callback.go:38)

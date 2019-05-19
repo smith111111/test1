@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package proto;
+
+service UserService {
+    rpc GetUser (GetUserReq) returns (UserInfo) {}
+    rpc GetUserByInternalAddress (GetUserByInternalAddressReq) returns (UserInfo) {}
+    rpc IsExist (IsExistReq) returns (IsExistResp) {}
+}
+
+message GetUserReq {
+    uint64 user_id = 1;
+}
+
+message GetUserByInternalAddressReq {
+    string internal_address = 1;
+}
+
+message UserInfo {
+    uint64 id = 1;
+    string name = 2;
+    string area_code = 3;
+    string mobile = 4;
+    string email = 5;
+    string avatar_url = 6;
+    int32 status = 7;
+    string internal_address = 8;
+    uint64 parent_id = 9;
+    int32 user_type = 10;
+    double discount_rate = 11;
+    bool is_real_name = 12;
+    string referral_code = 13;
+    string trading_methods = 14;
+}
+
+message IsExistReq {
+    string input = 1;
+}
+
+message IsExistResp {
+    bool exist = 1;
+}

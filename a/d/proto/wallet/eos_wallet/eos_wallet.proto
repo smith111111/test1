@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package proto;
+
+service EosWalletService {
+    // 充值申请：产生一个新收款地址并放入到监控地址数据库表中去，返回新地址
+    rpc Deposit (DepositReq) returns (DepositResp) {}
+    // 提现申请：发送EOS给接收者
+    rpc EosWithdraw (EosWithdrawReq) returns (EosWithdrawResp) {}
+}
+
+message DepositReq {
+    int32 purpose = 1;
+}
+
+message DepositResp {
+    string address = 1;
+}
+
+message EosWithdrawReq {
+    string to = 1;
+    string value = 2;
+}
+
+message EosWithdrawResp {
+    string txid = 1;
+}
+
+message TransactionCallback {
+	bool is_deposit = 1;
+	string txid = 2;
+	string from = 3;
+	string to = 4;
+	string contract = 5;
+	uint64 status = 6;
+	string quantity = 7;
+	string memo = 8;
+	int64 block_time = 9;
+}

@@ -1,0 +1,2 @@
+--------------------start--------------------
+[01-09 18:21:09.956][ERROR] api-MintToken-error: nats: timeout (private_wallet_service/api.go:106)

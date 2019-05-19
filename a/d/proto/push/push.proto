@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package proto;
+
+service PushP2P {
+    rpc Logout (LogoutReq) returns (LogoutResp) {}
+    rpc SendMsg (SendMsgReq) returns (SendMsgResp) {}
+}
+
+service PushP2M {
+    rpc SyncDeviceInfo (DeviceInfoReq) returns (DeviceInfoResp) {}
+}
+
+message LogoutReq {
+    uint64 userId = 1;
+    int32 appId = 2;
+}
+
+message LogoutResp {
+    int32 errNo = 1;
+    string msg = 2;
+}
+
+message SendMsgReq {
+	string displayType = 1;                  //消息类型，notification-通知，message-消息
+	string receivers = 2;                    //接收者id
+	int32 appId = 3;                         //应用id
+	string title = 4;                        //通知消息的标题
+	string text = 5;                         //通知的内容，对应iOS的alter
+	bytes custom = 6;                        //自定义字段（路由）
+	int32 expireTime = 7;                    //失效时间
+	int32 loginStatus = 8;                   //推送对象是否是登录用户-1:未登录，1:登录，9:all,默认为1
+}
+
+message SendMsgResp {
+    int32 errNo = 1;
+    string msg = 2;
+}
+
+message DeviceInfoReq {
+    int32 appId = 1;
+    string deviceToken = 2;
+    int32 pushType = 3;
+    uint64 uid = 4;
+    int32 platform = 5;
+}
+
+message DeviceInfoResp {
+    int32 errNo = 1;
+    string msg = 2;
+}

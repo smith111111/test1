@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package proto;
+
+service CurrencyService {
+    rpc GetCryptoCurrency (GetCurrencyReq) returns (CryptoCurrencyInfo) {}
+    rpc GetFiatCurrency (GetCurrencyReq) returns (FiatCurrencyInfo) {}
+}
+
+message GetCurrencyReq {
+    string code = 1;
+}
+
+message CryptoCurrencyInfo {
+}
+
+message FiatCurrencyInfo {
+
+}

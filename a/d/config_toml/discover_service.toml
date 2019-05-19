@@ -1,0 +1,4 @@
+[discover_service]
+name = "discover_service"
+api_prefix = "/v1/discover"
+port = 9195

@@ -1,0 +1,85 @@
+syntax = "proto3";
+
+package proto;
+
+service PrivateWalletService {
+    rpc ChainTip (ChainTipReq) returns (ChainTipResp) {}
+    rpc Transfer (TransferReq) returns (TransferResp) {}
+    rpc NewAddress (NewAddressReq) returns (AddressResp) {}
+    rpc AddTokenTransaction (TransactionReq) returns (TransactionResp) {}
+    rpc ExecuteTransaction (TransactionReq) returns (TransactionResp) {}
+    rpc DeployToken (DeployTokenReq) returns (AddressResp) {}
+    rpc GetTokenBalance (GetTokenBalanceReq) returns (GetTokenBalanceResp) {}
+    rpc MintToken (TokenReq) returns (TokenResp) {}
+    rpc BurnToken (TokenReq) returns (TokenResp) {}
+}
+
+message ChainTipReq {
+}
+
+message ChainTipResp {
+    uint32 height = 1;
+    string hash = 2;
+}
+
+message AddressResp {
+    string address = 1;
+}
+
+message TransferReq {
+    string to = 1;
+    string value = 2;
+}
+
+message TransferResp {
+    string hash = 1;
+}
+
+message NewAddressReq {
+    int32 purpose = 1;
+}
+
+message TransactionReq {
+    string amount = 1;
+    string sn = 2;
+    int32  threshold = 3;
+    int64 timeout = 4;
+    string buyer_address = 5;
+    string seller_address = 6;
+    string token_address = 7;
+    int32 to = 8;
+}
+
+message TransactionResp {
+    string txid = 1;
+}
+
+message DeployTokenReq {
+    string name = 1;
+    string symbol = 2;
+    uint32 decimals = 3;
+}
+
+message GetTokenBalanceReq {
+    string token_address = 1;
+    string who_address = 2;
+}
+
+message GetTokenBalanceResp {
+    string balance = 1;
+}
+
+message TokenReq {
+    string token_address = 1;
+    string who_address = 2;
+    string amount = 3;
+}
+
+message TokenResp {
+}
+
+message TransactionErrorCallback {
+    bool is_deposit = 1;
+	string token_address = 2;
+	string who_address = 3;
+}

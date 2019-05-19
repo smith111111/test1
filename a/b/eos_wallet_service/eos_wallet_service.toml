@@ -1,0 +1,9 @@
+[eos_wallet_service]
+name = "eos_wallet_service"
+url = "wss://ws.eospark.com/v1/ws"
+contract_account = "xiaopingguo1"
+app_key = "48f594e19edb52c71e6e7011ec90c9e4"
+port = 9012
+
+[nats]
+url = "nats://192.168.0.236:4222"

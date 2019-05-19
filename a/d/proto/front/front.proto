@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package proto;
+
+service FrontP2M {
+    rpc RecvPush (RecvPushReq) returns (RecvPushResp) {}
+}
+
+message RecvPushReq {
+    uint64 uid = 1;
+    int64 msgId = 2;
+    string title = 3;
+    string text = 4;
+    bytes custom = 5;
+}
+
+message RecvPushResp {
+    int32 errNo = 1;
+    string msg = 2;
+}

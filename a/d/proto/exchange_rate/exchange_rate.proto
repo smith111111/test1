@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package proto;
+
+service ExchangeRateService {
+    rpc GetAllRates (GetAllRatesReq) returns (GetAllRatesResp) {}
+    rpc GetExchangeRate (GetExchangeRateReq) returns (GetExchangeRateResp) {}
+    rpc GetLatestRate (GetExchangeRateReq) returns (GetExchangeRateResp) {}
+}
+
+message GetAllRatesReq {
+    bool cache = 1;
+}
+
+message GetAllRatesResp {
+    map<string, double> all_rates = 1;
+}
+
+message GetExchangeRateReq {
+    string code = 1;
+}
+
+message GetExchangeRateResp {
+    double rate = 1;
+}

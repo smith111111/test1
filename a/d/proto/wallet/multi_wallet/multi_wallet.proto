@@ -1,0 +1,78 @@
+syntax = "proto3";
+
+package proto;
+
+service MultiWalletService {
+    rpc ChainTip (ChainTipReq) returns (ChainTipResp) {}
+    rpc Deposit (DepositReq) returns (DepositResp) {}
+    rpc Withdraw (WithdrawReq) returns (WithdrawResp) {}
+    rpc GetOmniTransaction (GetOmniTransactionReq) returns (GetOmniTransactionResp) {}
+}
+
+message ChainTipReq {
+    string code = 1;
+    string property_id = 2;
+}
+
+message ChainTipResp {
+    uint32 height = 1;
+    string hash = 2;
+}
+
+message DepositReq {
+    string code = 1;
+    string property_id = 2;
+    int32 purpose = 3;
+}
+
+message DepositResp {
+    string address = 1;
+}
+
+message WithdrawReq {
+    string code = 1;
+    string property_id = 2;
+    string address = 3;
+    int64 amount = 4;
+    int32 fee_level = 5;
+}
+
+message WithdrawResp {
+    string txid = 1;
+}
+
+message GetOmniTransactionReq {
+    string code = 1;
+    string txid = 2;
+}
+
+message GetOmniTransactionResp {
+    string amount = 1;
+    string fee = 2;
+    string txid = 3;
+    int64 block_time = 4;
+}
+
+message TransactionCallback {
+	string txid = 1;
+	repeated TransactionOutput outputs = 2;
+	repeated TransactionInput inputs = 3;
+	int32 height = 4;
+	int64 timestamp = 5;
+	int64 value = 6;
+	bool watch_only = 7;
+	int64 block_time = 8;
+}
+
+message TransactionOutput {
+    string address = 1;
+    int64 value = 2;
+    uint32 index = 3;
+}
+
+message TransactionInput {
+    bytes outpoint_hash = 1;
+    uint32 outpoint_index = 2;
+    string linked_address = 3;
+    int64 value = 4;
+}

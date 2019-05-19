@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package proto;
+
+service TaskService {
+    rpc OrderTimeout (OrderTimeoutReq) returns (BoolResp) {}
+    rpc AccountTransfer(AccountTransferReq) returns (BoolResp) {}
+}
+
+message OrderTimeoutReq {
+    int64 duration = 1;
+    int32 callback_type = 2;
+    string order_sn = 3;
+    int32 scene = 4;
+}
+
+message AccountTransferReq {
+    string amount = 1;
+    string sn = 2;
+    string receiver_address= 3;
+    string sender_address = 4;
+    string token_address = 5;
+}
+
+message BoolResp {
+    bool ok = 1;
+}

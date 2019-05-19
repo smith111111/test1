@@ -1,0 +1,3 @@
+--------------------start--------------------
+[01-09 17:56:35.955][ERROR] api-GetTokenBalance-error: nats: timeout (private_wallet_service/api.go:96)
+[01-09 17:56:35.955][ERROR] Account-Withdraw-Error: nats: timeout (withdraw/withdraw.go:75)

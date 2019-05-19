@@ -1,0 +1,7 @@
+[multi_wallet_service]
+name = "multi_wallet_service"
+test_net = true
+port = 9003 # 服务端口
+
+[nats]
+url = "nats://192.168.0.231:4222"

@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package proto;
+
+service IMService {
+    rpc UserRegister (UserRegisterReq) returns (UserRegisterResp) {}
+    rpc UserUpdate (UserUpdateReq) returns (UserUpdateResp) {}
+    rpc SendSysMsg (SendSysMsgReq) returns (SendSysMsgResp) {}
+}
+
+message UserRegisterReq {
+    uint64 id = 1;                //用户ID
+    string name = 2;              //用户名
+    bytes props = 3;              //json属性
+    string icon = 4;              //头像
+    string email = 5;             //邮箱
+    string birth = 6;             //生日
+    string mobile = 7;            //手机号
+    int32 gender = 8;             //年龄
+    bytes ex = 9;                 //用户名片扩展字段
+}
+
+message UserRegisterResp {
+    int32 errNo = 1;
+    string msg = 2;
+    string token = 3;   //Im Token
+}
+
+message UserUpdateReq {
+    uint64 id = 1;                //用户ID
+    string name = 2;              //用户名
+    string icon = 4;              //头像
+    string email = 5;             //邮箱
+    string birth = 6;             //生日
+    string mobile = 7;            //手机号
+    int32 gender = 8;             //年龄
+    bytes ex = 9;                 //用户名片扩展字段
+}
+
+message UserUpdateResp {
+    int32 errNo = 1;
+    string msg = 2;
+}
+
+message SendSysMsgReq {
+	uint64 from = 1;   //发送者
+    uint64 to = 2;     //接收者
+    bytes attach = 3;  //自定义通知内容，最大总数据长度4096字符
+}
+
+message SendSysMsgResp {
+    int32 errNo = 1;
+    string msg = 2;
+}

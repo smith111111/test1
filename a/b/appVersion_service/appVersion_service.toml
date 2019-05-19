@@ -1,0 +1,4 @@
+[appVersion_service]
+name = "appVersion_service"
+api_prefix = "/v1/appVersion"
+port = 9196

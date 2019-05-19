@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package proto;
+
+service AccountService {
+    rpc EosCallback (CallbackReq) returns (BoolResp) {}
+    rpc EthereumCallback (CallbackReq) returns (BoolResp) {}
+    rpc MultiCallback (CallbackReq) returns (BoolResp) {}
+    rpc PrivateErrorCallback (CallbackReq) returns (BoolResp) {}
+    rpc AccountTransfer(AccountTransferReq) returns (BoolResp) {}
+}
+
+message CallbackReq {
+    bytes transaction = 1;
+}
+
+message AccountTransferReq {
+    string amount = 1;
+    string sn = 2;
+    string receiver_address= 3;
+    string sender_address = 4;
+    string token_address = 5;
+}
+
+message BoolResp {
+    bool ok = 1;
+}

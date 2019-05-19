@@ -1,0 +1,7 @@
+[push_service]
+name = "push_service"
+api_prefix = "/v1/push"
+port = 8027
+
+[nats]
+url = "nats://192.168.0.231:4222"
