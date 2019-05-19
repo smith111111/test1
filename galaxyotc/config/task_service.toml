@@ -1,0 +1,3 @@
+[task_service]
+name = "task_service"
+port = 9005

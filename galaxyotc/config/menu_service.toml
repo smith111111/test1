@@ -1,0 +1,4 @@
+[menu_service]
+name = "menu_service"
+api_prefix = "/v1/menu"
+port = 9094

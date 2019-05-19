@@ -1,0 +1,4 @@
+[captcha_service]
+name = "captcha_service"
+api_prefix = "/v1/captcha"
+port = 9093

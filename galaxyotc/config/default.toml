@@ -1,0 +1,55 @@
+[server]
+dev = true
+version = "2.0"
+captcha_max_age = 900 # 验证码期限，单位秒
+token_max_age = 86400 # token期限，单位秒
+token_secret = "Jxa26iOirBiYX8iLCJuYm5iy"
+max_multipart_memory = 3 # 上传的图片最大允许的大小，单位MB
+pass_salt = "xrjoN1qR" # 用户密码加盐
+order_prefix = "galaxy_" # 订单前缀
+api_prefix = "/api"
+
+[nats]
+url = "nats://192.168.0.231:4222"
+
+[elastic]
+urls = ["http://127.0.0.1:9200"]
+
+[luosimao]
+api = "https://captcha.luosimao.com/api/site_verify" # 螺丝帽验证地址
+api_key = "" # 螺丝帽api_key
+# api_key = "5855ac10e7d96b4a0b967c3d09750741"
+
+[mail]
+user = "604890678@qq.com" # 域名邮箱账号
+password = "rjwspnoydqkebcgg" # 域名邮箱密码
+host = "smtp.qq.com" # smtp邮箱域名
+port = 465 # smtp邮箱端口
+from = "galaxy otc" # 邮件来源
+
+[captcha_content]
+cn = "您好！感谢您使用Galaxy Coin，您正在进行短信验证，本次请求的验证码为：%s"
+en = "Hi! please use the following code to confirm your identity: %s"
+ja = "こんにちは, %s"
+
+[hxd]
+api = "http://www.hxdsms.com/user/index/send_msg" # 恒信达短信请求API
+user = "GalaxyOTC" # 恒信达用户名
+password = "123456" # 恒信达密码
+
+[db]
+dialect = "mysql"
+max_idle = 5
+max_open = 10
+gc_dsn = "test:123456@tcp(192.168.0.210:3306)/galaxy_coin_v2?sql_notes=false&parseTime=true&loc=Local&charset=utf8mb4,utf8"
+
+[redis]
+max_idle = 3
+max_active = 5
+url = "192.168.0.223:6379"
+password = ""
+data_base = 6
+
+[mongo]
+url = "192.168.0.223.27017"
+data_base = ""
